@@ -30,8 +30,8 @@ class Address_Update_Email extends WC_Email {
         $this->template_html    = 'emails/address-update-email.php';
         $this->template_plain   = 'emails/plain/address-update-email.php';
 
-         // Triggers for this email
-         add_action( 'customer_address_change_email_notification', array( $this, 'trigger' ), 10, 2 );
+        // Triggers for this email
+        add_action( 'customer_address_change_email_notification', array( $this, 'trigger' ), 10, 2 );
         
         // Call parent constructor
         parent::__construct();

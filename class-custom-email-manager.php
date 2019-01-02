@@ -29,14 +29,13 @@ class Custom_Email_Manager {
 	    return $emails;
 	}
 	
-	public function customer_save_address_email_action( $customer_id, $load_address ) {
-	     // add an action for our email trigger if the order id is valid
-		 $file = 'cw-output-test.txt';
+	public function customer_save_address_email_action( $customer_id, $load_ess ) {
+		 /*$file = 'output-test.txt';
 		 $time = date('m/d/Y h:i:s a', time());
-		 $content = $time.": customer_save_address_email_action firing from class-custom-email-manager  ".$customer_id."\n";
-		 file_put_contents($file, $content, FILE_APPEND | LOCK_EX);
+		 $content = $time.": customer_save_address_email_action firing from class-custom-email-manager. Customer ID = ".$customer_id."\n";
+		 file_put_contents($file, $content, FILE_APPEND | LOCK_EX);*/
 		
-		
+		 // add an action for our email trigger if the customer id is valid
 		 if ( isset( $customer_id ) && 0 != $customer_id ) {
 	        new WC_Emails();
     		do_action( 'customer_address_change_email_notification', $customer_id, $load_address );
